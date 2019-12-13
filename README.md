@@ -8,9 +8,17 @@ A series of docker image to build Android source. When we use newest OS, it may 
 
 ## Usage
 
-    docker run -it -v /path/to/source_root:/path/in/docker oakchen/buildenv:Android-5.x bash
+    docker run -it -v /path/to/source_root:/path/in/docker oakchen/buildenv:tag bash
 
-Then, change to source directory, following normal Android build steps.
+Here tag can be Android-5.x/Android-6.x/Android-7.x/Android-8.x/Android-9.x/Android-10.x. Typically, you can map /home in host to /home in docker, then, you can add group and user as the same as host before you build the source:
+
+```
+groupadd -g id gname # you can get group/user name and id by id command in your host
+useradd -d /home/uname -M -g gname -s /bin/bash uname
+su uname # Switch to the user
+```
+
+After group and user are created, switch user, change to source directory, following normal Android build steps.
 
 You can leave the container running in the background by pressing CTRL+P, then CTRL+Q. If you leave the container running in the background, you can return by command
 
