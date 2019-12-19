@@ -18,6 +18,7 @@ RUN apt-get update -y && \
     apt-get install -y --no-install-recommends libxml2-utils lib32z-dev zlib1g-dev && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean && \
+    mkdir -p /usr/lib/jvm && \
     curl -o jdk8.tgz https://android.googlesource.com/platform/prebuilts/jdk/jdk8/+archive/master.tar.gz && \
     tar -zxf jdk8.tgz linux-x86 && \
     mv linux-x86 /usr/lib/jvm/java-8-openjdk-amd64 && \
