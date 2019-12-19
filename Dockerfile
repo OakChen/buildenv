@@ -16,9 +16,12 @@ RUN apt-get update -y && \
     apt-get install -y --no-install-recommends x11proto-core-dev libx11-dev libgl1-mesa-glx libgl1-mesa-dev && \
     apt-get install -y --no-install-recommends libc6-dev libc6-dev-i386 gcc-multilib g++-multilib && \
     apt-get install -y --no-install-recommends libxml2-utils lib32z-dev zlib1g-dev && \
-    apt-get install -y --no-install-recommends openjdk-7-jdk && \
     rm -rf /var/lib/apt/lists/* && \
-    apt-get clean
+    apt-get clean && \
+    curl -o jdk8.tgz https://android.googlesource.com/platform/prebuilts/jdk/jdk8/+archive/master.tar.gz && \
+    tar -zxf jdk8.tgz linux-x86 && \
+    mv linux-x86 /usr/lib/jvm/java-8-openjdk-amd64 && \
+    rm -rf jdk8.tgz
 
 ENV LANG en_US.utf8
 ENV LANGUAGE en_US:en
