@@ -10,16 +10,12 @@ do
 		echo "Usage:"
 		echo "-h, --help        Display this information"
 		echo "-n, --no-home     Don't map $HOME directory"
-		echo "-d, --dev         Map /dev/"
 		echo "-p, --passwd      Map /etc/passwd"
 		echo "-g, --group       Map /etc/group"
 		exit
 		;;
 	-n | --no-home)
 		nohome=true
-		;;
-	-d | --dev)
-		mapdev=true
 		;;
 	-p | --password)
 		mappasswd=true
@@ -38,10 +34,6 @@ done
 
 if [ -z "$nohome" ]; then
 	options="$options -v $HOME:$HOME"
-fi
-
-if [ "$mapdev" = "true" ]; then
-	options="$options -v /dev/:/dev/"
 fi
 
 if [ "$mappasswd" = "true" ]; then
