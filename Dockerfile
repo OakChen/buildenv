@@ -8,6 +8,7 @@ RUN apt-get update -y && \
     apt-get install -y --no-install-recommends command-not-found command-not-found-data && \
     apt-get install -y --no-install-recommends language-pack-en language-pack-en-base && \
     apt-get install -y --no-install-recommends language-pack-zh-hans language-pack-zh-hans-base && \
+    apt-get install -y --no-install-recommends rsync && \
     apt-get install -y --no-install-recommends vim python-markdown tofrodos xsltproc && \
     apt-get install -y --no-install-recommends zip unzip curl ca-certificates gettext gnupg bc mingw32 && \
     apt-get install -y --no-install-recommends build-essential git gawk flex bison gperf ccache && \
