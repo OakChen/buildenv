@@ -8,6 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 COPY sudoers-without-password /etc/sudoers.d/
 
 RUN chmod 0440 /etc/sudoers.d/sudoers-without-password && \
+    rm /bin/sh && ln -s bash /bin/sh && \
     apt-get update -y && \
     apt-get install -y --no-install-recommends command-not-found command-not-found-data && \
     apt-get install -y --no-install-recommends language-pack-en language-pack-en-base && \
@@ -15,7 +16,8 @@ RUN chmod 0440 /etc/sudoers.d/sudoers-without-password && \
     apt-get install -y --no-install-recommends vim python-markdown python tofrodos xsltproc texinfo && \
     apt-get install -y --no-install-recommends zip unzip curl gettext gnupg bc mingw32 sudo wget chrpath && \
     apt-get install -y --no-install-recommends build-essential git gawk flex bison gperf ccache diffstat && \
-    apt-get install -y --no-install-recommends genisoimage device-tree-compiler u-boot-tools && \
+    apt-get install -y --no-install-recommends genisoimage device-tree-compiler u-boot-tools mtd-utils && \
+    apt-get install -y --no-install-recommends android-tools-fsutils && \
     apt-get install -y --no-install-recommends libncurses5-dev lib32ncurses5-dev libreadline6-dev && \
     apt-get install -y --no-install-recommends x11proto-core-dev libx11-dev libgl1-mesa-glx libgl1-mesa-dev && \
     apt-get install -y --no-install-recommends libc6-dev libc6-dev-i386 gcc-multilib g++-multilib && \
