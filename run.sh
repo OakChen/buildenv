@@ -12,6 +12,7 @@ do
 		echo "-n, --no-home     Don't map $HOME directory"
 		echo "-p, --passwd      Map /etc/passwd"
 		echo "-g, --group       Map /etc/group"
+		echo "-s, --shadow      Map /etc/shadow"
 		exit
 		;;
 	-n | --no-home)
@@ -22,6 +23,9 @@ do
 		;;
 	-g | --group)
 		mapgroup=true
+		;;
+	-s | --shadow)
+		mapshadow=true
 		;;
 	*)
 		others="$*"
@@ -42,6 +46,10 @@ fi
 
 if [ "$mapgroup" = "true" ]; then
 	options="$options -v /etc/group:/etc/group"
+fi
+
+if [ "$mapshadow" = "true" ]; then
+	options="$options -v /etc/shadow:/etc/shadow"
 fi
 
 options="$options $others"
