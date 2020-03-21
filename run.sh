@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # buildenv docker运行脚本
-# Copyright (C) 2019-2019 Oak Chen <oak@sfysoft.com>
+# Copyright (C) 2020-2020 Oak Chen <oak@sfysoft.com>
 
 until [ $# -eq 0 ]
 do
@@ -54,7 +54,7 @@ fi
 
 options="$options $others"
 
-commandline="docker run -it $options oakchen/buildenv:zm-imx6-linux bash"
+commandline="docker run -it $options oakchen/buildenv:zm-imx6-zadas bash"
 
 echo $commandline
 eval $commandline
