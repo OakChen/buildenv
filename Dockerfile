@@ -17,7 +17,7 @@ RUN chmod 0440 /etc/sudoers.d/sudoers-without-password && \
     apt-get install -y --no-install-recommends wget rsync zip unzip curl gettext gnupg bc mingw32 busybox && \
     apt-get install -y --no-install-recommends build-essential git gawk flex bison gperf ccache fakeroot && \
     apt-get install -y --no-install-recommends genisoimage device-tree-compiler u-boot-tools && \
-    apt-get install -y --no-install-recommends pkg-config && \
+    apt-get install -y --no-install-recommends pkg-config help2man && \
     apt-get install -y --no-install-recommends libncurses5-dev lib32ncurses5-dev libreadline6-dev && \
     apt-get install -y --no-install-recommends libc6-dev libc6-dev-i386 lib32stdc++6 && \
     apt-get install -y --no-install-recommends libxml2-utils lib32z-dev zlib1g-dev liblzo2-2 && \
