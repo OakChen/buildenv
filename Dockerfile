@@ -23,6 +23,7 @@ RUN chmod 0440 /etc/sudoers.d/sudoers-without-password && \
     apt-get install -y --no-install-recommends libxml2-utils lib32z-dev zlib1g-dev liblzo2-2 && \
     apt-get install -y --no-install-recommends x11proto-core-dev libx11-dev libgl1-mesa-glx libgl1-mesa-dev && \
     apt-get install -y --no-install-recommends gcc-aarch64-linux-gnu g++-aarch64-linux-gnu && \
+    apt-get install -y --no-install-recommends gcc-arm-linux-gnueabi g++-arm-linux-gnueabi && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
 
