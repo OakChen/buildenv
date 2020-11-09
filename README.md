@@ -1,4 +1,4 @@
-# Build environment for i.MX6 Linux
+# Build environment for Qualcomm APQ8096AU HLOS
 
 A series of docker image to build embedded platforms.
 
