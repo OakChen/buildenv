@@ -1,4 +1,4 @@
-# Build environment for i.MX6 Linux
+# Build environment for Allwinner T507 Linux
 
 A series of docker image to build embedded platforms.
 
@@ -10,7 +10,7 @@ A series of docker image to build embedded platforms.
 
     docker run -it -v /path/to/source_root:/path/in/docker oakchen/buildenv:tag bash
 
-Here tag can be Android-5.x/Android-6.x/Android-7.x/Android-8.x/Android-9.x/Android-10.x/imx6-l4.15. Typically, you can map /home in host to /home in docker, then, you can add group and user as the same as host before you build the source:
+Here tag can be zm-t507-linux. Typically, you can map /home in host to /home in docker, then, you can add group and user as the same as host before you build the source:
 
 ```
 groupadd -g id gname # you can get group/user name and id by id command in your host
