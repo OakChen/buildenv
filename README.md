@@ -20,6 +20,12 @@ su uname # Switch to the user
 
 After group and user are created, switch user, change to source directory, following normal Android build steps.
 
+Even, you can map passwd and group to docker, then you don't need to create user and group.
+
+```bash
+docker run -it -v /path/to/source_root:/path/in/docker -v /etc/group:/etc/group -v /etc/passwd:/etc/passwd oakchen/buildenv:tag bash
+```
+
 You can leave the container running in the background by pressing CTRL+P, then CTRL+Q. If you leave the container running in the background, you can return by command
 
 `docker attach CONTAINER_ID`
