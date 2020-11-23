@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 MAINTAINER Oak Chen <oak@sfysoft.com>
 
 # 避免Ubuntu 18.04+构建时提示debconf错误
@@ -13,13 +13,14 @@ RUN chmod 0440 /etc/sudoers.d/sudoers-without-password && \
     apt-get install -y --no-install-recommends command-not-found command-not-found-data && \
     apt-get install -y --no-install-recommends language-pack-en language-pack-en-base && \
     apt-get install -y --no-install-recommends language-pack-zh-hans language-pack-zh-hans-base && \
-    apt-get install -y --no-install-recommends gcc-4.9-arm-linux-gnueabihf g++-4.9-arm-linux-gnueabihf && \
-    apt-get install -y --no-install-recommends build-essential git vim && \
-    apt-get install -y --no-install-recommends libboost-dev && \
+    apt-get install -y --no-install-recommends vim wget curl unzip lzop socat xterm && \
+    apt-get install -y --no-install-recommends gawk diffstat texinfo texi2html docbook-utils help2man asciidoc groff && \
+    apt-get install -y --no-install-recommends python-pysqlite2 desktop-file-utils && \
+    apt-get install -y --no-install-recommends git-core cvs subversion mercurial && \
+    apt-get install -y --no-install-recommends build-essential autoconf automake chrpath u-boot-tools && \
+    apt-get install -y --no-install-recommends gcc-multilib libsdl1.2-dev libgl1-mesa-dev libglu1-mesa-dev && \
     rm -rf /var/lib/apt/lists/* && \
-    apt-get clean && \
-    if [ ! -e /usr/bin/arm-linux-gnueabihf-gcc ]; then ln -s arm-linux-gnueabihf-gcc-4.9 /usr/bin/arm-linux-gnueabihf-gcc; fi && \
-    if [ ! -e /usr/bin/arm-linux-gnueabihf-g++ ]; then ln -s arm-linux-gnueabihf-g++-4.9 /usr/bin/arm-linux-gnueabihf-g++; fi
+    apt-get clean
 
 ENV LANG en_US.utf8
 ENV LANGUAGE en_US:en
