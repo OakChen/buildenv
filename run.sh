@@ -54,7 +54,7 @@ fi
 
 options="$options $others"
 
-commandline="docker run -it $options oakchen/buildenv:zm-imx6-zadas bash"
+commandline="docker run -it $options oakchen/buildenv:zm-zadas bash"
 
 echo $commandline
 eval $commandline
