@@ -54,8 +54,7 @@ fi
 
 options="$options $others"
 
-#commandline="docker run -it $options oakchen/buildenv:zm-apq8096au bash"
-commandline="docker run -it $options zm-apq8096au bash"
+commandline="docker run -it $options oakchen/buildenv:zm-apq8096au bash"
 
 echo $commandline
-#eval $commandline
+eval $commandline
