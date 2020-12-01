@@ -13,7 +13,8 @@ RUN chmod 0440 /etc/sudoers.d/sudoers-without-password && \
     apt-get install -y --no-install-recommends command-not-found command-not-found-data && \
     apt-get install -y --no-install-recommends language-pack-en language-pack-en-base && \
     apt-get install -y --no-install-recommends language-pack-zh-hans language-pack-zh-hans-base && \
-    apt-get install -y --no-install-recommends vim wget curl unzip lzop socat xterm && \
+    apt-get install -y --no-install-recommends bash-completion openssh-client && \
+    apt-get install -y --no-install-recommends vim wget curl unzip lzop socat xterm tmux && \
     apt-get install -y --no-install-recommends gawk diffstat texinfo texi2html docbook-utils help2man asciidoc groff && \
     apt-get install -y --no-install-recommends python-pysqlite2 desktop-file-utils && \
     apt-get install -y --no-install-recommends git-core cvs subversion mercurial && \
