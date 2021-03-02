@@ -13,6 +13,7 @@ RUN chmod 0440 /etc/sudoers.d/sudoers-without-password && \
     apt-get install -y --no-install-recommends command-not-found command-not-found-data && \
     apt-get install -y --no-install-recommends language-pack-en language-pack-en-base && \
     apt-get install -y --no-install-recommends language-pack-zh-hans language-pack-zh-hans-base && \
+    apt-get install -y --no-install-recommends bash-completion openssh-client && \
     apt-get install -y --no-install-recommends vim python-markdown tofrodos xsltproc texinfo dos2unix texlive && \
     apt-get install -y --no-install-recommends wget rsync zip unzip curl gettext gnupg bc mingw32 busybox && \
     apt-get install -y --no-install-recommends build-essential git gawk flex bison gperf ccache fakeroot && \
