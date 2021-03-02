@@ -8,10 +8,12 @@ ENV DEBIAN_FRONTEND noninteractive
 COPY sudoers-without-password /etc/sudoers.d/
 
 RUN chmod 0440 /etc/sudoers.d/sudoers-without-password && \
+    rm /bin/sh && ln -s bash /bin/sh && \
     apt-get update -y && \
     apt-get install -y --no-install-recommends command-not-found command-not-found-data && \
     apt-get install -y --no-install-recommends language-pack-en language-pack-en-base && \
     apt-get install -y --no-install-recommends language-pack-zh-hans language-pack-zh-hans-base && \
+    apt-get install -y --no-install-recommends bash-completion openssh-client && \
     apt-get install -y --no-install-recommends vim python-markdown python tofrodos xsltproc texinfo && \
     apt-get install -y --no-install-recommends zip unzip lzop curl gettext gnupg bc sudo wget chrpath && \
     apt-get install -y --no-install-recommends build-essential git gawk flex bison gperf ccache diffstat && \
