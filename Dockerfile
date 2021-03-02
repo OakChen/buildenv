@@ -13,11 +13,13 @@ RUN chmod 0440 /etc/sudoers.d/sudoers-without-password && \
     apt-get install -y --no-install-recommends command-not-found command-not-found-data && \
     apt-get install -y --no-install-recommends language-pack-en language-pack-en-base && \
     apt-get install -y --no-install-recommends language-pack-zh-hans language-pack-zh-hans-base && \
+    apt-get install -y --no-install-recommends bash-completion openssh-client && \
     apt-get install -y --no-install-recommends vim wget zip unzip lzop xterm && \
     apt-get install -y --no-install-recommends gawk diffstat xutils-dev texinfo flex dos2unix && \
     apt-get install -y --no-install-recommends git subversion cvs && \
     apt-get install -y --no-install-recommends android-tools-fsutils && \
     apt-get install -y --no-install-recommends build-essential chrpath libtool automake && \
+    apt-get install -y --no-install-recommends binutils-aarch64-linux-gnu && \
     apt-get install -y --no-install-recommends gcc-multilib g++-multilib && \
     apt-get install -y --no-install-recommends libc6-i386 lib32stdc++6 libglib2.0-dev lib32gcc1 && \
     apt-get install -y --no-install-recommends libsdl1.2-dev lib32gomp1 && \
